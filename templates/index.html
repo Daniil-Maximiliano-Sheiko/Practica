@@ -11,14 +11,14 @@
     </form>
 
     <div class="ips">
-        {% for elem in adress%}
+        {% for elem in ipNoban%}
     <p>{{ elem['ip'] }} - {{ elem['frequency'] }}</p>
         {% endfor %}
     </div>
 
     <div class="ban">
-        {% for elem in adress%}
-        <p>{{ elem['ip'] }} - {{ elem['frequency'] }}</p>
+        {% for elem in ipban%}
+        <p>Ban {{ elem['ip'] }} - {{ elem['frequency'] }}</p>
             {% endfor %}
     </div> 
 

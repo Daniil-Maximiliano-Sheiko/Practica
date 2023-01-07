@@ -22,21 +22,15 @@ def index():
         for key, value in result:
             if value>100:
                 ban.append({'ip': key, 'frequency': value})
+        ipNoban=[]
+        for key, value in result:
+            if 1>=value<100:
+                ipNoban.append({'ip': key, 'frequency': value})
         
-        return render_template('index.html', adress=ban)
+        return render_template('index.html', ipban=ban, ipNoban=ipNoban)
     return render_template('index.html')
 
 
-
-# def main():
-#     data = open('sucsses.log').read()
-
-#     pattern = r'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}'
-#     ips = re.findall(pattern, data)
-#     result = Counter(ips).most_common(10)
-    
-#     for key, value in result:
-#         print(key + ' - ' + str(value))
 
 if __name__ == '__main__':
     app.run(debug=True)
